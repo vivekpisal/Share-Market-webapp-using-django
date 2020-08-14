@@ -1,0 +1,155 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<style type="text/css">
+ul#list-nav {
+  list-style:none;
+  margin:20px;
+  padding:0;
+  width:1000px
+}
+ul#list-nav li {
+  display:inline
+}
+ul#list-nav li a {
+  text-decoration:none;
+  padding:5px 0;
+  width:155px;
+  background:#485e49;
+  color:#eee;
+  float:left;
+  text-align:center;
+  border-left:1px solid #fff;
+}
+ul#list-nav li a:hover {
+  background:#a2b3a1;
+  color:#000
+}
+</style>
+<center>
+<ul id="list-nav"><style type="text/css">
+ul#list-nav {
+  list-style:none;
+  margin:20px;
+  padding:0;
+  width:1000px
+}
+ul#list-nav li {
+  display:inline
+}
+ul#list-nav li a {
+  text-decoration:none;
+  padding:5px 0;
+  width:155px;
+  background:#485e49;
+  color:#eee;
+  float:left;
+  text-align:center;
+  border-left:1px solid #fff;
+}
+ul#list-nav li a:hover {
+  background:#a2b3a1;
+  color:#000
+}
+</style>
+<center>
+	<ul id="list-nav">
+  <li><a href="{% url 'globalmarket' %}">STOCKS</a></li>
+  <li><a href="{% url 'indices' %}">INDICES</a></li>
+  <li><a href="{% url 'commidities'%}">COMMODITIES</a></li>
+  <li><a href="{% url 'forex' %}">FOREX</a></li>
+  <li><a href="{% url 'cryptocurrencies' %}">CRYPTOCURRENCIES</a></li>
+</ul>
+
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com/markets/indices/" rel="noopener" target="_blank"><span class="blue-text">Index Quotes</span></a> by TradingView</div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js" async>
+  {
+  "title": "Indices",
+  "width": 770,
+  "height": 450,
+  "locale": "in",
+  "symbolsGroups": [
+    {
+      "name": "US & Canada",
+      "symbols": [
+        {
+          "name": "FOREXCOM:SPXUSD",
+          "displayName": "S&P 500"
+        },
+        {
+          "name": "FOREXCOM:NSXUSD",
+          "displayName": "Nasdaq 100"
+        },
+        {
+          "name": "CME_MINI:ES1!",
+          "displayName": "E-Mini S&P"
+        },
+        {
+          "name": "INDEX:DXY",
+          "displayName": "U.S. Dollar Currency Index"
+        },
+        {
+          "name": "FOREXCOM:DJI",
+          "displayName": "Dow 30"
+        }
+      ]
+    },
+    {
+      "name": "Europe",
+      "symbols": [
+        {
+          "name": "INDEX:SX5E",
+          "displayName": "Euro Stoxx 50"
+        },
+        {
+          "name": "FOREXCOM:UKXGBP",
+          "displayName": "FTSE 100"
+        },
+        {
+          "name": "INDEX:DEU30",
+          "displayName": "DAX Index"
+        },
+        {
+          "name": "INDEX:CAC40",
+          "displayName": "CAC 40 Index"
+        },
+        {
+          "name": "INDEX:SMI"
+        }
+      ]
+    },
+    {
+      "name": "Asia/Pacific",
+      "symbols": [
+        {
+          "name": "INDEX:NKY",
+          "displayName": "Nikkei 225"
+        },
+        {
+          "name": "INDEX:HSI",
+          "displayName": "Hang Seng"
+        },
+        {
+          "name": "BSE:SENSEX",
+          "displayName": "BSE SENSEX"
+        },
+        {
+          "name": "BSE:BSE500"
+        },
+        {
+          "name": "INDEX:KSIC",
+          "displayName": "Kospi Composite"
+        }
+      ]
+    }
+  ],
+  "colorTheme": "light"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+
+{% endblock %}

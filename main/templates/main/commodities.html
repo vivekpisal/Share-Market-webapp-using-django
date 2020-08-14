@@ -1,0 +1,229 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<style type="text/css">
+ul#list-nav {
+  list-style:none;
+  margin:20px;
+  padding:0;
+  width:1000px
+}
+ul#list-nav li {
+  display:inline
+}
+ul#list-nav li a {
+  text-decoration:none;
+  padding:5px 0;
+  width:155px;
+  background:#485e49;
+  color:#eee;
+  float:left;
+  text-align:center;
+  border-left:1px solid #fff;
+}
+ul#list-nav li a:hover {
+  background:#a2b3a1;
+  color:#000
+}
+</style>
+<center>
+  <ul id="list-nav">
+  <li><a href="{% url 'globalmarket' %}">STOCKS</a></li>
+  <li><a href="{% url 'indices' %}">INDICES</a></li>
+  <li><a href="{% url 'commidities'%}">COMMODITIES</a></li>
+  <li><a href="{% url 'forex' %}">FOREX</a></li>
+  <li><a href="{%url  'cryptocurrencies' %}">CRYPTOCURRENCIES</a></li>
+</ul>
+<!-- TradingView Widget BEGIN -->
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com/markets/futures/" rel="noopener" target="_blank"><span class="blue-text">Commodity Prices</span></a> by TradingView</div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js" async>
+  {
+  "title": "Commodities",
+  "width": 770,
+  "height": 450,
+  "locale": "in",
+  "symbolsGroups": [
+    {
+      "name": "Energy",
+      "symbols": [
+        {
+          "name": "NYMEX:CL1!",
+          "displayName": "Crude Oil"
+        },
+        {
+          "name": "NYMEX:NG1!",
+          "displayName": "Natural Gas"
+        },
+        {
+          "name": "TVC:UKOIL",
+          "displayName": "Brent Oil"
+        },
+        {
+          "name": "NYMEX:RB1!",
+          "displayName": "Gasoline"
+        },
+        {
+          "name": "NYMEX:HO1!",
+          "displayName": "Heating Oil"
+        },
+        {
+          "name": "NYMEX:AEZ1!",
+          "displayName": "Ethanol"
+        }
+      ]
+    },
+    {
+      "name": "Metals",
+      "symbols": [
+        {
+          "name": "COMEX:GC1!",
+          "displayName": "Gold"
+        },
+        {
+          "name": "COMEX:SI1!",
+          "displayName": "Silver"
+        },
+        {
+          "name": "NYMEX:PL1!",
+          "displayName": "Platinum"
+        },
+        {
+          "name": "COMEX_MINI:QC1!",
+          "displayName": "Copper"
+        },
+        {
+          "name": "COMEX:ZNC1!",
+          "displayName": "Zinc"
+        }
+      ]
+    },
+    {
+      "name": "Agricultural",
+      "symbols": [
+        {
+          "name": "NYMEX:KT1!",
+          "displayName": "Coffee"
+        },
+        {
+          "name": "NYMEX:TT1!",
+          "displayName": "Cotton"
+        },
+        {
+          "name": "CBOT:ZS1!",
+          "displayName": "Soybean"
+        },
+        {
+          "name": "CBOT:ZW1!",
+          "displayName": "Wheat"
+        },
+        {
+          "name": "NYMEX:YO1!",
+          "displayName": "Sugar"
+        },
+        {
+          "name": "CBOT:ZC1!",
+          "displayName": "Corn"
+        }
+      ]
+    },
+    {
+      "name": "Currencies",
+      "symbols": [
+        {
+          "name": "CME:6E1!",
+          "displayName": "Euro"
+        },
+        {
+          "name": "CME:6B1!",
+          "displayName": "British Pound"
+        },
+        {
+          "name": "CME:6J1!",
+          "displayName": "Japanese Yen"
+        },
+        {
+          "name": "CME:6S1!",
+          "displayName": "Swiss Franc"
+        },
+        {
+          "name": "CME:6A1!",
+          "displayName": "Australian Dollar"
+        },
+        {
+          "name": "CME:6C1!",
+          "displayName": "Canadian Dollar"
+        }
+      ]
+    },
+    {
+      "name": "Indices",
+      "symbols": [
+        {
+          "name": "CME:SP1!",
+          "displayName": "S&P 500"
+        },
+        {
+          "name": "CME_MINI:NQ1!",
+          "displayName": "Nasdaq 100"
+        },
+        {
+          "name": "CBOT_MINI:YM1!",
+          "displayName": "Dow 30"
+        },
+        {
+          "name": "CME:NKD1!",
+          "displayName": "Nikkei 225"
+        },
+        {
+          "name": "EUREX:FDAX1!",
+          "displayName": "DAX"
+        },
+        {
+          "name": "CME:IBV1!",
+          "displayName": "IBovespa"
+        }
+      ]
+    },
+    {
+      "name": "Interest Rates",
+      "symbols": [
+        {
+          "name": "CBOT:ZN1!",
+          "displayName": "10 Year T-Note"
+        },
+        {
+          "name": "CBOT:ZF1!",
+          "displayName": "5 Year T-Note"
+        },
+        {
+          "name": "CBOT:Z3N1!",
+          "displayName": "3 Year T-Note"
+        },
+        {
+          "name": "CBOT:ZT1!",
+          "displayName": "2 Year T-Note"
+        },
+        {
+          "name": "CBOT:ZQ1!",
+          "displayName": "30-day FED Funds IR"
+        },
+        {
+          "name": "CBOT:ZB1!",
+          "displayName": "T-Bond"
+        }
+      ]
+    }
+  ],
+  "colorTheme": "light"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+<!-- TradingView Widget END -->
+
+</center>
+
+{% endblock %}

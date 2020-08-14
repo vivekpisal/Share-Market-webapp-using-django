@@ -1,0 +1,144 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+<style type="text/css">
+ul#list-nav {
+  list-style:none;
+  margin:20px;
+  padding:0;
+  width:1000px
+}
+ul#list-nav li {
+  display:inline
+}
+ul#list-nav li a {
+  text-decoration:none;
+  padding:5px 0;
+  width:155px;
+  background:#485e49;
+  color:#eee;
+  float:left;
+  text-align:center;
+  border-left:1px solid #fff;
+}
+ul#list-nav li a:hover {
+  background:#a2b3a1;
+  color:#000
+}
+</style>
+<center>
+	<ul id="list-nav">
+  <li><a href="{% url 'globalmarket' %}">STOCKS</a></li>
+  <li><a href="{% url 'indices' %}">INDICES</a></li>
+  <li><a href="{% url 'commidities'%}">COMMODITIES</a></li>
+  <li><a href="{% url 'forex' %}">FOREX</a></li>
+  <li><a href="{% url 'cryptocurrencies' %}">CRYPTOCURRENCIES</a></li>
+</ul>
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com/markets/stocks-india/" rel="noopener" target="_blank"><span class="blue-text">Stock Quotes</span></a> by TradingView</div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js" async>
+  {
+  "title": "Stocks",
+  "width": 770,
+  "height": 450,
+  "locale": "in",
+  "symbolsGroups": [
+    {
+      "name": "Financial",
+      "symbols": [
+        {
+          "name": "NYSE:JPM",
+          "displayName": "Jpmorgan Chase & Co"
+        },
+        {
+          "name": "NYSE:WFC",
+          "displayName": "Wells Fargo Co New"
+        },
+        {
+          "name": "NYSE:BAC",
+          "displayName": "Bank Amer Corp"
+        },
+        {
+          "name": "NYSE:HSBC",
+          "displayName": "Hsbc Hldgs Plc"
+        },
+        {
+          "name": "NYSE:C",
+          "displayName": "Citigroup Inc"
+        },
+        {
+          "name": "NYSE:MA",
+          "displayName": "Mastercard Incorporated"
+        }
+      ]
+    },
+    {
+      "name": "Technology",
+      "symbols": [
+        {
+          "name": "NASDAQ:AAPL",
+          "displayName": "Apple"
+        },
+        {
+          "name": "NASDAQ:GOOGL",
+          "displayName": "Google Inc"
+        },
+        {
+          "name": "NASDAQ:MSFT",
+          "displayName": "Microsoft Corp"
+        },
+        {
+          "name": "NASDAQ:FB",
+          "displayName": "Facebook Inc"
+        },
+        {
+          "name": "NYSE:ORCL",
+          "displayName": "Oracle Corp"
+        },
+        {
+          "name": "NASDAQ:INTC",
+          "displayName": "Intel Corp"
+        }
+      ]
+    },
+    {
+      "name": "Services",
+      "symbols": [
+        {
+          "name": "NASDAQ:AMZN",
+          "displayName": "Amazon Com Inc"
+        },
+        {
+          "name": "NYSE:BABA",
+          "displayName": "Alibaba Group Hldg Ltd"
+        },
+        {
+          "name": "NYSE:T",
+          "displayName": "At&t Inc"
+        },
+        {
+          "name": "NYSE:WMT",
+          "displayName": "Wal-mart Stores Inc"
+        },
+        {
+          "name": "NYSE:CHL",
+          "displayName": "China Mobile Limited"
+        },
+        {
+          "name": "NYSE:V",
+          "displayName": "Visa Inc"
+        }
+      ]
+    }
+  ],
+  "colorTheme": "light"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+
+</center>
+
+{% endblock %}

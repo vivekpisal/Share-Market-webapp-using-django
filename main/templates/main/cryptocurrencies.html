@@ -1,0 +1,176 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<style type="text/css">
+ul#list-nav {
+  list-style:none;
+  margin:20px;
+  padding:0;
+  width:1000px
+}
+ul#list-nav li {
+  display:inline
+}
+ul#list-nav li a {
+  text-decoration:none;
+  padding:5px 0;
+  width:155px;
+  background:#485e49;
+  color:#eee;
+  float:left;
+  text-align:center;
+  border-left:1px solid #fff;
+}
+ul#list-nav li a:hover {
+  background:#a2b3a1;
+  color:#000
+}
+</style>
+<center>
+	<ul id="list-nav">
+  <li><a href="{% url 'globalmarket' %}">STOCKS</a></li>
+  <li><a href="{% url 'indices' %}">INDICES</a></li>
+  <li><a href="{% url 'commidities'%}">COMMODITIES</a></li>
+  <li><a href="{% url 'forex' %}">FOREX</a></li>
+  <li><a href="{% url 'cryptocurrencies' %}">CRYPTOCURRENCIES</a></li>
+</ul>
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com/markets/cryptocurrencies/" rel="noopener" target="_blank"><span class="blue-text">Bitcoin and Altcoin Prices</span></a> by TradingView</div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js" async>
+  {
+  "title": "Cryptocurrencies",
+  "title_raw": "Cryptocurrencies",
+  "title_link": "/markets/cryptocurrencies/prices-all/",
+  "width": 770,
+  "height": 450,
+  "locale": "in",
+  "symbolsGroups": [
+    {
+      "name": "Overview",
+      "symbols": [
+        {
+          "name": "BITSTAMP:BTCUSD"
+        },
+        {
+          "name": "BITSTAMP:ETHUSD"
+        },
+        {
+          "name": "BITSTAMP:XRPUSD"
+        },
+        {
+          "name": "COINBASE:BCHUSD"
+        },
+        {
+          "name": "COINBASE:LTCUSD"
+        },
+        {
+          "name": "BITFINEX:IOTUSD"
+        }
+      ]
+    },
+    {
+      "name": "Bitcoin",
+      "symbols": [
+        {
+          "name": "BITSTAMP:BTCUSD"
+        },
+        {
+          "name": "COINBASE:BTCEUR"
+        },
+        {
+          "name": "COINBASE:BTCGBP"
+        },
+        {
+          "name": "BITFLYER:BTCJPY"
+        },
+        {
+          "name": "CEXIO:BTCRUB"
+        },
+        {
+          "name": "CME:BTC1!"
+        }
+      ]
+    },
+    {
+      "name": "XRP",
+      "symbols": [
+        {
+          "name": "BITSTAMP:XRPUSD"
+        },
+        {
+          "name": "KRAKEN:XRPEUR"
+        },
+        {
+          "name": "KORBIT:XRPKRW"
+        },
+        {
+          "name": "BITSO:XRPMXN"
+        },
+        {
+          "name": "BINANCE:XRPBTC"
+        },
+        {
+          "name": "BITTREX:XRPETH"
+        }
+      ]
+    },
+    {
+      "name": "Ethereum",
+      "symbols": [
+        {
+          "name": "COINBASE:ETHUSD"
+        },
+        {
+          "name": "KRAKEN:ETHEUR"
+        },
+        {
+          "name": "KRAKEN:ETHGBP"
+        },
+        {
+          "name": "KRAKEN:ETHJPY"
+        },
+        {
+          "name": "POLONIEX:ETHBTC"
+        },
+        {
+          "name": "KRAKEN:ETHXBT"
+        }
+      ]
+    },
+    {
+      "name": "Bitcoin Cash",
+      "symbols": [
+        {
+          "name": "COINBASE:BCHUSD"
+        },
+        {
+          "name": "BITSTAMP:BCHEUR"
+        },
+        {
+          "name": "CEXIO:BCHGBP"
+        },
+        {
+          "name": "BITSTAMP:BCHBTC"
+        },
+        {
+          "name": "HITBTC:BCHETH"
+        },
+        {
+          "name": "KRAKEN:BCHXBT"
+        }
+      ]
+    }
+  ],
+  "colorTheme": "light"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+<!-- TradingView Widget END -->
+
+</center>
+
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends 'main/base.html' %}
+{% block content %}
+
+<div class="container">
+<div class="row" >
+    <div class="col-8" style="margin-top: 10%;">
+    	<h2>Pan Card</h2>
+<form method="post" enctype="multipart/form-data">
+	{% csrf_token %}
+      <div class="form-group col-md-8">
+     <label for="exampleFormControlFile1">Name:</label>
+    <input type="text" class="form-control" id="exampleFormControlFile1" name="name" value="{{name}}">
+    <label for="exampleFormControlFile1">Card No:</label>
+    <input type="text" class="form-control" id="exampleFormControlFile1" name="cardno" value="{{cardno}}">
+  </div>
+    <button type="submit" class="btn btn-success">Submit</button>   
+</form>
+
+</div>
+    <div class="col-4" style="margin-top: 15%;">
+<div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action">
+    Personal Information
+  </a>
+  <a href="#" class="list-group-item list-group-item-action active">Pan Card</a>
+  <a href="#" class="list-group-item list-group-item-action">Aadhar Card</a>
+  <a href="#" class="list-group-item list-group-item-action">Bank Statement</a>
+  <a href="#" class="list-group-item list-group-item-action" tabindex="-1" aria-disabled="true">Photo</a>
+</div>
+    </div>
+  </div>
+</div>
+
+<iframe height="480" width="650" src="https://ssltvc.forexprostools.com/?pair_ID=160&height=480&width=650&interval=300&plotStyle=area&domain_ID=56&lang_ID=56&timezone_ID=20"></iframe>
+
+{% endblock %}

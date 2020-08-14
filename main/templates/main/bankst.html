@@ -1,0 +1,48 @@
+{% extends 'main/base.html' %}
+{% block content %}
+
+<div class="container">
+<div class="row" >
+    <div class="col-8" style="margin-top: 10%;">
+    	<h2>Bank Statement</h2>
+
+
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <div class="form-group">
+    <label for="exampleFormControlFile1">Example file input</label>
+    <input type="file" class="form-control-file" name="file" id="exampleFormControlFile1" onchange="loadFile(event)" accept="image/*" required>
+  </div>
+    <button type="submit" class="btn btn-success">Submit</button>   
+</form>
+  <img id="output" height="30%" width="30%;">
+</div>
+
+
+
+
+    <div class="col-4" style="margin-top: 15%;">
+<div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action">
+    Personal Information
+  </a>
+  <a href="#" class="list-group-item list-group-item-action">Pan Card</a>
+  <a href="#" class="list-group-item list-group-item-action">Aadhar Card</a>
+  <a href="#" class="list-group-item list-group-item-action active">Bank Statement</a>
+  <a href="#" class="list-group-item list-group-item-action" tabindex="-1" aria-disabled="true">Photo</a>
+</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  var loadFile = function(event) {
+    var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function() {
+      URL.revokeObjectURL(output.src) // free memory
+    }
+  };
+</script>
+
+{% endblock %}

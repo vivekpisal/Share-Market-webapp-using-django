@@ -1,0 +1,38 @@
+{% extends 'main/base.html' %}
+
+
+
+{% block content %}
+<center>
+<h2>Stock Market Widget</h2>
+
+<p>Stock Market Widget shows top 5 gaining, losing and active stocks for the day. Hotlists are updated real-time based on current market activity, so they always show the most relevant stocks.</p>
+
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container" style="margin-top: 5%;">
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://in.tradingview.com/markets/stocks-india/market-movers-gainers/" rel="noopener" target="_blank"><span class="blue-text">Stock Market</span></a> by TradingView</div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-hotlists.js" async>
+  {
+  "colorTheme": "light",
+  "dateRange": "12m",
+  "exchange": "BSE",
+  "showChart": true,
+  "locale": "in",
+  "largeChartUrl": "",
+  "isTransparent": false,
+  "width": "600",
+  "height": "600",
+  "plotLineColorGrowing": "rgba(33, 150, 243, 1)",
+  "plotLineColorFalling": "rgba(33, 150, 243, 1)",
+  "gridLineColor": "rgba(240, 243, 250, 1)",
+  "scaleFontColor": "rgba(120, 123, 134, 1)",
+  "belowLineFillColorGrowing": "rgba(33, 150, 243, 0.12)",
+  "belowLineFillColorFalling": "rgba(33, 150, 243, 0.12)",
+  "symbolActiveColor": "rgba(33, 150, 243, 0.12)"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+</center>
+{% endblock %}
